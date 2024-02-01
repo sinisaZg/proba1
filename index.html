@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&family=Poppins:wght@300;400;600;700&family=Roboto&family=Rubik+Mono+One&display=swap"
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="pocetna">
+        <ul class="nav-bar">
+            <li class="logo"><a href=""><img src="img/logo.png" alt=""></a></li>
+            <input type="checkbox" name="" id="check">
+            <span class="menu">
+                <li><a href="#pocetna">Početna</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#galerija">Galerija</a></li>
+                <li><a href="#o_nama">O nama</a></li>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+            </span>
+            <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+        </ul>
+    </nav>
+    <header>
+        <div class="header-content">
+            <div class="slika"><img src="img/logo.png" alt=""></div>
+            <h1 class="header-title">BEL-mont</h1>
+            <h3 class="header-subtitle">Obrt za klimatizaciju i ventilaciju</h3>
+            <h4 class="header-subtitle1 ">Tomislava Krizmana 5, 10 000 Zagreb</h4>
+
+            </section>
+        </div>
+    </header>
+    <div id="kontakt">
+        <div class="container kontakt_container">
+            <div class="lijevo">
+                <a class="linkovi_kontakt" href=""> <i class="fa-solid fa-phone"></i> +385 97 644 0230</a><br>
+                <a class="linkovi_kontakt" href=""> <i class="fa-solid fa-envelope"></i> Anton Tonči Belan</a><br>
+                <a class="linkovi_kontakt" href=""> <i class="fa-solid fa-house"></i> TOMISLAVA KRIZMANA 5, 10 000
+                    ZAGREB</a><br>
+                <a class="linkovi_kontakt" href=""> <i class="fa-brands fa-facebook">Anton Tonći Belan</a></i>
+            </div>
+            <div class="desno">
+                <div class="tonci"><img src="img/tonci_crop.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div id="galerija" class="container">
+
+        <h1 class="title">Galerija</h1>
+        <div class="image-container">
+            <img src="img/1.jpg" class="galerija_slike" onclick="openImage('img/1.jpg')" alt="">
+            <img src="img/2.jpg" class="galerija_slike" onclick="openImage('img/2.jpg')" alt="">
+            <img src="img/3.jpg" class="galerija_slike" onclick="openImage('img/3.jpg')" alt="">
+            <img src="img/4.jpg" class="galerija_slike" onclick="openImage('img/4.jpg')" alt="">
+            <img src="img/5.jpg" class="galerija_slike" onclick="openImage('img/5.jpg')" alt="">
+            <img src="img/6.jpg" class="galerija_slike" onclick="openImage('img/6.jpg')" alt="">
+            <img src="img/7.jpg" class="galerija_slike" onclick="openImage('img/7.jpg')" alt="">
+            <img src="img/8.jpg" class="galerija_slike" onclick="openImage('img/8.jpg')" alt="">
+            <img src="img/9.jpg" class="galerija_slike" onclick="openImage('img/9.jpg')" alt="">
+            <img src="img/10.jpg" class="galerija_slike" onclick="openImage('img/10.jpg')" alt="">
+            <img src="img/11.jpg" class="galerija_slike" onclick="openImage('img/11.jpg')" alt="">
+            <img src="img/12.jpg" class="galerija_slike" onclick="openImage('img/12.jpg')" alt="">
+            <img src="img/13.jpg" class="galerija_slike" onclick="openImage('img/13.jpg')" alt="">
+            <img src="img/14.jpg" class="galerija_slike" onclick="openImage('img/14.jpg')" alt="">
+            <img src="img/15.jpg" class="galerija_slike" onclick="openImage('img/15.jpg')" alt="">
+            <img src="img/16.jpg" class="galerija_slike" onclick="openImage('img/16.jpg')" alt="">
+            <img src="img/17.jpg" class="galerija_slike" onclick="openImage('img/17.jpg')" alt="">
+            <img src="img/18.jpg" class="galerija_slike" onclick="openImage('img/18.jpg')" alt="">
+            <img src="img/19.jpg" class="galerija_slike" onclick="openImage('img/19.jpg')" alt="">
+            <!-- Larger image and overlay -->
+            <div class="overlay" id="overlay" onclick="closeImage()"></div>
+            <div class="larger-image-wrapper" id="largerImageWrapper">
+                <img src="" alt="Large Image" class="larger-image" id="largerImage">
+                <span class="close-button" onclick="closeImage()">X</span>
+            </div>
+
+        </div>
+    </div>
+    <div id="o_nama">
+        <div class="container">
+            <a href="#pocetna"> <img src="img/logo.png" alt=""></a>
+            <h2>O nama</h2>
+            <p> BEL-mont je obrt za klimatizaciju, osnovan 2022.</p>
+            <h3> Osnovne djelatnosti: </h3>
+            <p>Uvođenje instalacija vodovoda, kanalizacije i plina i instalacija za grijanje i klimatizaciju
+                </h3>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

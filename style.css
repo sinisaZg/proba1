@@ -1,0 +1,516 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+
+
+    font-family: 'Roboto', sans-serif;
+  
+    --color1: #EF2F34;
+    --color2: #53ACE4;
+    --color3: #EFE9F4;
+    --color4: #484D6D;
+    --color5: #EE6352;
+    background-color: var(--color2);
+    color: var(--color1);
+}
+
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: var(--color3);
+    padding: 12px 20px;
+}
+
+.logo img {
+    width: 100px;
+    transition: 1s linear;
+
+
+}
+
+.logo img:hover {
+    transform: rotate(360deg);
+
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    padding-left: 30px;
+}
+
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.15s ease-in-out;
+}
+
+.menu li a:hover::after {
+    width: 100%;
+}
+
+.open-menu,
+.close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.close-menu {
+    top: 20px;
+    right: 20px;
+
+}
+
+#check {
+    display: none;
+}
+
+
+
+header {
+    align-items: center;
+    background-color: var(--color4);
+    display: flex;
+    font-size: 18px;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    z-index: 0;
+
+}
+
+header img {
+    transition: 1s linear;
+}
+
+header img:hover {
+    transform: rotateZ(-360deg);
+}
+
+
+
+h1.header-title {
+    color: var(--color2);
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    opacity: 0;
+    animation: fade-slide-down 1s 1.5s ease-out forwards;
+}
+
+.header-subtitle {
+    animation: fade-slide-down 1s 1.8s ease-out forwards;
+    opacity: 0;
+
+}
+
+.header-subtitle1 {
+    animation: fade-slide-down 1s 1.9s ease-out forwards;
+    opacity: 0;
+
+}
+
+
+
+.header-subtitle {
+    color: var(--color3);
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.header-subtitle1 {
+    margin-bottom: 2rem;
+    color: var(--color3);
+
+    text-transform: uppercase;
+
+}
+
+.slika img {
+    width: 300px;
+}
+
+p.header-button {
+    position: relative;
+    z-index: 10;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: fit-content;
+    text-align: center;
+    margin: auto;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: grey;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header:after {
+    background: var(--color3);
+    content: "";
+    height: 40rem;
+    left: -5px;
+    position: absolute;
+    right: -5%;
+    top: 90%;
+    transform-origin: 0 0;
+    transform: rotateZ(-4deg);
+
+}
+
+header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(83, 172, 228, 0.5), rgba(239, 47, 52, 0.8)),
+        url(img/klime_crop.jpg) no-repeat bottom;
+    background-size: cover;
+    animation: fade-slide-down 2s ease-out forwards;
+    z-index: -1;
+}
+
+
+/* galerija -micanje veće slike po defaultu */
+
+
+/* Style the overlay background */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.larger-image-wrapper {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.larger-image {
+    width: auto;
+    height: 100%;
+    width: auto;
+    display: block;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: var(--color1);
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+
+
+
+
+
+
+
+@keyframes fade-slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-10rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+
+
+.container {
+    max-width: 85%;
+    margin: 30px auto;
+}
+
+.container .title {
+    font-size: 25px;
+    background: color var(--color4);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: var(--color3);
+    text-align: center;
+    padding: 15px;
+}
+
+.container .image-container {
+    column-count: 5;
+    /* Number of columns */
+    column-width: 250px;
+    /* Width of each column */
+    gap: 15px;
+    margin: 0 auto;
+    text-align: center;
+
+    width: 90%;
+
+}
+
+.container .image-container img {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    width: 100%;
+
+}
+
+
+#kontakt {
+    background-color: var(--color1);
+    color: var(--color3);
+    top: -4%;
+    height: 40vh;
+    padding: 3%;
+}
+
+#kontakt {
+    position: relative;
+    height: 50vh;
+    background: url('img/1.jpg') no-repeat bottom;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+
+    /* Adjust text color to ensure readability */
+
+}
+
+#kontakt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(239, 233, 244, 0.8);
+    /* Adjust the alpha value for transparency */
+    z-index: 1;
+}
+
+.kontakt_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.lijevo {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.desno {
+    text-align: center;
+    width: 50%;
+}
+
+.tonci img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.linkovi_kontakt {
+    padding: 20px;
+}
+
+a.linkovi_kontakt {
+    color: var(--color4);
+    font-weight: bold;
+    font-size: 1.52rem;
+}
+
+#kontakt .container {
+    position: relative;
+    z-index: 2;
+    /* Set a higher z-index than the overlay */
+    color: var(--color4);
+
+}
+
+img.galerija_slike {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+img.galerija_slike:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+#o_nama {
+    background-color: var(--color4);
+    color: var(--color2);
+    height: 50vh;
+}
+
+#o_nama .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#o_nama .container img {
+    width: 300px;
+    transition: 1s linear;
+}
+
+#o_nama .container img:hover {
+    transform: rotate(360deg);
+}
+
+#o_nama .container h2 {
+    margin: 20px 0;
+}
+
+#o_nama .container h3 {
+    margin: 20px 0;
+}
+
+@media screen and (min-width: 1451px) {
+    #kontakt {
+        height: 80vh;
+    }
+}
+
+@media screen and (min-width: 2600px) {
+    #kontakt {
+        height: 100vh;
+    }
+}
+
+@media (max-width:1080px) {
+    #kontakt {
+        top: 0%;
+    }
+
+    .linkovi_kontakt {
+        padding: 10px;
+    }
+
+}
+
+@media (max-width:610px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color3);
+        transition: all 0, 2s ease-in-out
+    }
+
+    .menu li {
+        margin-top: 40px;
+    }
+
+    .menu li a {
+        padding: 10px;
+        color: var(--color2);
+
+    }
+
+    .open-menu,
+    .close-menu {
+        display: block;
+        color: var(--color2);
+    }
+
+    #check:checked~.menu {
+        right: 0;
+    }
+
+    .galerija_slike {
+        pointer-events: none;
+    }
+
+    .kontakt_container {
+        flex-direction: column;
+    }
+
+    .lijevo {
+
+        width: 100%;
+
+    }
+
+    .desno {
+        display: none;
+    }
+
+    #o_nama {
+
+        height: 60vh;
+    }
+}
